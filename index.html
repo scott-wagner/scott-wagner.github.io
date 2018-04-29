@@ -5,11 +5,31 @@
     <title>Scott's Homepage</title>
     <style>
         body {
-            background-color: blue;
+            background-color: lightblue;
         }
     </style>
+    <script>
+        var counter = 0;
+	function kill() {
+            counter++;
+            var p = document.createElement('p');
+            p.innerText = String(counter) + " people have died";
+            document.body.appendChild(p);
+	}
+	function husk() {
+            var img = document.createElement('img');
+            img.src = "husk.png";
+            img.width = 200;
+            document.body.appendChild(img);
+        }
+    </script>
   </head>
   <body>
-    <h1>Oh hai</h1>
+    <h1>FortNite: Save The World</h2>
+    <p>Hello! I am going to teach you about Fortnite Save The World! It is very fun! The first thing you should know about forntie save the world is that 98% of the worlds population has<b>VANISHED!</b> and zombies have averred (called husk's) and my theory is that they turned into the husk's! It is up to you and the remaining 2% of the world to make babies! Not seriously though you have to shot the monsters with... you gassed is cocked and loaded <b> GUNS!</b> and swords and grenades and hammers etc. etc. </p>
+    <button onclick="kill()">Don't <b>click</b> me</button>
+    <button onclick="husk()">Don't <b>click</b> me for real!</button>
+    <br>
+
   </body>
 </html>
