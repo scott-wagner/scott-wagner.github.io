@@ -15,8 +15,8 @@
 
 <div class="center-image">
   <img width="50%" id='theimg'><br>
-  <button id='back-button' onclick="go(-1)">Back</button>
-  <button id='forward-button' onclick="go(1)">Next</button>
+  <button id='back-button' disabled onclick="go(-1)">Back</button>
+  <button id='forward-button' disabled onclick="go(1)">Next</button>
   <p>These GIFs are free to use.  Copyright Scott Wagner.</p>
 </div>
 
@@ -28,10 +28,10 @@ if (!img) img = NumberOfImages;
 img = Number(img); 
 document.getElementById('theimg').src = img + ".gif";
 
-if (img <= 1)
-  document.getElementById('back-button').disabled=true;
-if (img >= NumberOfImages)
-  document.getElementById('forward-button').disabled=true;
+if (img > 1)
+  document.getElementById('back-button').disabled=false;
+if (img < NumberOfImages)
+  document.getElementById('forward-button').disabled=false;
 
 function go(delta) {
   location.search = new URLSearchParams([['img', String(img + delta)]]);
