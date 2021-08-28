@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf8">
+<title>New page</title>
+<style>
+.center-image {
+  Text-align:center
+}
+</style>
+</head>
+
+<body>
+
+<div class="center-image">
+  <img width="50%" id='theimg'><br>
+  <button onclick="go(-1)">Back</button>
+  <button onclick="go(1)">Next</button>
+  <p>These GIFs are free to use.  Copyright Scott Wagner.</p>
+</div>
+
+<script>
+let img = new URLSearchParams(location.search).get("img");
+if (!img) img = 6; 
+img = Number(img); 
+document.getElementById('theimg').src = img + ".gif";
+
+function go(delta) {
+  location.search = new URLSearchParams([['img', String(img + delta)]]);
+}
+</script>
+
+</body>
+</html>
